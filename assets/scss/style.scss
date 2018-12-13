@@ -1,0 +1,18 @@
+
+body {
+    margin: 0;
+}
+
+.slider {
+    position: relative;
+
+    &__item {
+        position: absolute;
+        
+        img {
+            max-width: 100%;
+        }
+    }
+}
+
+

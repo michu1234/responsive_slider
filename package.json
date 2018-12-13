@@ -1,0 +1,27 @@
+{
+  "name": "responsive_slider",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/michu1234/responsive_slider.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/michu1234/responsive_slider/issues"
+  },
+  "homepage": "https://github.com/michu1234/responsive_slider#readme",
+  "dependencies": {
+    "gsap": "^2.0.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.2.0",
+    "@babel/preset-env": "^7.2.0"
+  }
+}
