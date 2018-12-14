@@ -10740,7 +10740,7 @@ var h1 = document.querySelector('.slider__h1');
 var description = document.querySelector('.slider__description');
 var button = document.querySelector('.btn'); // controls
 
-var dots = Array.from(document.querySelectorAll('.icon-circle'));
+var dots = Array.from(document.querySelectorAll('.icon-circle-empty'));
 var tl = new TimelineMax({
   repeat: 123
 });
@@ -10761,9 +10761,9 @@ _TweenMax.TweenLite.set(slides[1], {
 });
 
 tl.set(dots[1], {
-  opacity: 0
+  textShadow: 'none'
 }).set(dots[0], {
-  opacity: 1
+  textShadow: '0 0 10px black'
 }).from(slides[0], 1, {
   opacity: 0
 }).fromTo(h1, 1, {
@@ -10792,11 +10792,11 @@ tl.set(dots[1], {
   opacity: 1
 }, '+=3').to(slides[0], 1, {
   opacity: 0
-}).to(slides[1], 1, {
-  opacity: 1
 }).set(dots[0], {
-  opacity: 0
+  textShadow: 'none'
 }).set(dots[1], {
+  textShadow: '0 0 10px black'
+}).to(slides[1], 1, {
   opacity: 1
 }).to(slides[1], 1, {
   opacity: 0

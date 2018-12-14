@@ -25,22 +25,35 @@ body {
     text-align: center;
 
     h1 {
-        // position: absolute;
-        // z-index: 4;
-        // top: 200px;
-        // left: 50%;
-        // transform: translate(-50%, -50%);
-        font-size: 50px;
         width: 100%;
         color: #ffffff;
         text-shadow: 0 0 10px rgb(27, 27, 27);
         opacity: 0;
-        padding-top: 200px;
+        padding-top: 50px;
+        font-size: 2rem;
+
+
+        @media screen and (min-width: 400px) {
+            padding-top: 50px;
+            font-size: 3rem;
+        }
+        
+        @media screen and (min-width: 900px) {
+            font-size: 3.5rem;
+            padding-top: 110px;
+        }
+
+        @media screen and (min-width: 1100px) {
+            font-size: 4rem;
+            padding-top: 40px;
+        }
+
+        @media screen and (min-width: 1380px) {
+            font-size: 5rem;
+        }
     }
 
     p {
-        line-height: 20px;
-        font-size: 20px;
         color: #ffffff;
         background: rgba(0, 0, 0, 0.278);
         max-width: 1321px;
@@ -48,7 +61,18 @@ body {
         padding: 20px 0 20px;
         font-family: 'Raleway';
         margin: 0 auto;
-        padding: 0;
+        padding: 20px 0 20px 0;
+        line-height: 16px;
+        font-size: 16px;
+        border-radius: 10px;
+
+
+        @media screen and (min-width: 1100px) {
+            line-height: 20px;
+            font-size: 20px;
+            padding-top: 40px;
+        }
+
     }
 
     .btn {
@@ -57,13 +81,21 @@ body {
         border: none;
         color: #fff;
         cursor: pointer;
-        padding: 16px 35px;
+        padding: 16px 10px;
         display: inline-block;
         outline: 0;
         font-size: 16px;
         text-align: center;
         border-radius: 25px;
         text-transform: uppercase !important;
+        margin-top: 20px;
+        font-weight: bold;
+
+
+        @media screen and (min-width: 1320px) {
+            font-size: 16px;
+            margin-top: 40px;
+        }
 
 
     }
@@ -71,6 +103,7 @@ body {
     &__description {
         opacity: 0;
         margin: 0 auto;
+        padding: 0 10px 0 10px;
     }
 
     &__item {
@@ -78,17 +111,30 @@ body {
         top: -30px;
 
         img {
-            max-width: 100%;
+            max-height: 500px;
         }
+
+        @media screen and (min-width: 1260px) {
+            img {
+                max-width: 100%;
+                width: 100%;
+            }
+        }
+    }
+
+    &__controls {
+        position: absolute;
+        z-index: 5;
+        bottom: 40px;
+        left: 50%;
+        transform: translate(-50%, -50%);
     }
 }
 
 
 .demo-icon {
-    font-size: 2rem;
+    font-size: 1.2rem;
     color: #ffffff;
-    position: absolute;
-    z-index: 2;
     cursor: pointer;
 }
 
