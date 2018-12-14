@@ -176,7 +176,12 @@ var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"_css_loader":"../../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"node_modules/gsap/TweenLite.js":[function(require,module,exports) {
+},{"./..\\font\\Raleway-Regular.ttf":[["Raleway-Regular.cf3e7790.ttf","assets/font/Raleway-Regular.ttf"],"assets/font/Raleway-Regular.ttf"],"./..\\font\\Raleway-Bold.ttf":[["Raleway-Bold.4902593b.ttf","assets/font/Raleway-Bold.ttf"],"assets/font/Raleway-Bold.ttf"],"_css_loader":"../../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"assets/scss/fontello.css":[function(require,module,exports) {
+var reloadCSS = require('_css_loader');
+
+module.hot.dispose(reloadCSS);
+module.hot.accept(reloadCSS);
+},{"./..\\font\\fontello.eot":[["fontello.5ba468ce.eot","assets/font/fontello.eot"],"assets/font/fontello.eot"],"./..\\font\\fontello.woff2":[["fontello.50cd5947.woff2","assets/font/fontello.woff2"],"assets/font/fontello.woff2"],"./..\\font\\fontello.woff":[["fontello.871433a6.woff","assets/font/fontello.woff"],"assets/font/fontello.woff"],"./..\\font\\fontello.ttf":[["fontello.8c712a45.ttf","assets/font/fontello.ttf"],"assets/font/fontello.ttf"],"./..\\font\\fontello.svg":[["fontello.caa62654.svg","assets/font/fontello.svg"],"assets/font/fontello.svg"],"_css_loader":"../../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"node_modules/gsap/TweenLite.js":[function(require,module,exports) {
 var global = arguments[3];
 "use strict";
 
@@ -10724,29 +10729,79 @@ TweenMax._autoActivated = [_TimelineLite.default, _TimelineMax.default, _CSSPlug
 
 require("../scss/style.scss");
 
+require("../scss/fontello.css");
+
 var _TweenMax = require("gsap/TweenMax");
 
+// slider
+var slider = document.querySelector(".slider");
 var slides = Array.from(document.querySelectorAll('.slider__item'));
+var h1 = document.querySelector('.slider__h1');
+var description = document.querySelector('.slider__description');
+var button = document.querySelector('.btn'); // controls
+
+var dots = Array.from(document.querySelectorAll('.icon-circle'));
 var tl = new TimelineMax({
   repeat: 123
 });
+var tl_text = new TimelineMax({
+  repeat: 123
+});
+
+function setSliderHeight() {
+  var image = document.querySelector(".slider__item img").clientHeight;
+  slider.style.height = "".concat(image, "px");
+}
+
+window.addEventListener('resize', setSliderHeight);
+window.addEventListener('load', setSliderHeight);
 
 _TweenMax.TweenLite.set(slides[1], {
   opacity: 0
 });
 
-tl.from(slides[0], 1, {
+tl.set(dots[1], {
   opacity: 0
-}).to(slides[0], 1, {
+}).set(dots[0], {
+  opacity: 1
+}).from(slides[0], 1, {
+  opacity: 0
+}).fromTo(h1, 1, {
+  transform: "rotateX(-150deg)",
+  transformOriginin: '20% 40%'
+}, {
+  transform: "rotateX(0)",
+  opacity: 1,
+  transformOriginin: '20% 40%',
+  ease: Bounce.easeOut
+}).fromTo(description, 3, {
+  transform: "translateX(10vw)",
+  opacity: 0
+}, {
+  transform: "translateX(0)",
+  opacity: 1,
+  ease: Elastic.easeOut.config(1, 0.3)
+}, '-=1').fromTo(button, 3, {
+  transform: "translateX(2vw)",
+  opacity: 0
+}, {
+  transform: "translateX(0)",
+  opacity: 1,
+  ease: Elastic.easeOut.config(1, 0.3)
+}, '-=2').to(slides[0], 1, {
   opacity: 1
 }, '+=3').to(slides[0], 1, {
   opacity: 0
 }).to(slides[1], 1, {
   opacity: 1
+}).set(dots[0], {
+  opacity: 0
+}).set(dots[1], {
+  opacity: 1
 }).to(slides[1], 1, {
   opacity: 0
 }, '+=3');
-},{"../scss/style.scss":"assets/scss/style.scss","gsap/TweenMax":"node_modules/gsap/TweenMax.js"}],"../../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"../scss/style.scss":"assets/scss/style.scss","../scss/fontello.css":"assets/scss/fontello.css","gsap/TweenMax":"node_modules/gsap/TweenMax.js"}],"../../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -10773,7 +10828,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52849" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53967" + '/');
 
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
