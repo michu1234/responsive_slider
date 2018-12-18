@@ -31,6 +31,7 @@ body {
         opacity: 0;
         padding-top: 50px;
         font-size: 2rem;
+        text-transform: uppercase;
 
 
         @media screen and (min-width: 400px) {
@@ -45,7 +46,7 @@ body {
 
         @media screen and (min-width: 1100px) {
             font-size: 4rem;
-            padding-top: 40px;
+            padding-top: 30px;
         }
 
         @media screen and (min-width: 1380px) {
@@ -58,13 +59,14 @@ body {
         background: rgba(0, 0, 0, 0.278);
         max-width: 1321px;
         width: 100%;
-        padding: 20px 0 20px;
-        font-family: 'Raleway';
+        font-family: 'Raleway-Bold';
         margin: 0 auto;
-        padding: 20px 0 20px 0;
+        padding: 20px 0 40px 0;
         line-height: 16px;
         font-size: 16px;
         border-radius: 10px;
+        font-weight: bold;
+        text-shadow: 0 0 10px #000;
 
 
         @media screen and (min-width: 1100px) {
@@ -81,7 +83,7 @@ body {
         border: none;
         color: #fff;
         cursor: pointer;
-        padding: 16px 10px;
+        padding: 16px 26px;
         display: inline-block;
         outline: 0;
         font-size: 16px;
@@ -129,43 +131,44 @@ body {
         left: 50%;
         transform: translate(-50%, -50%);
     }
+
+    .demo-icon {
+        font-size: 1.2rem;
+        color: #ffffff;
+        cursor: pointer;
+    }
+    
+    .icon-play-outline {
+        top: 0;
+        left: 49%;
+    }
+    
+    .icon-circle {
+        top: 0;
+        left: 52%;
+        opacity: 0;
+    }
+    
+    .icon-circle-empty {
+        top: 0;
+        left: 52%;
+    }
+    
+    .circle2 {
+        top: 0;
+        left: 55%;
+        opacity: 0;
+    }
+    
+    .icon2 {
+        top: 0;
+        left: 55%;
+    }
+    
+    .icon-pause {
+        top: 0;
+        left: 58%;
+    }
 }
 
 
-.demo-icon {
-    font-size: 1.2rem;
-    color: #ffffff;
-    cursor: pointer;
-}
-
-.icon-play-outline {
-    top: 0;
-    left: 49%;
-}
-
-.icon-circle {
-    top: 0;
-    left: 52%;
-    opacity: 0;
-}
-
-.icon-circle-empty {
-    top: 0;
-    left: 52%;
-}
-
-.circle2 {
-    top: 0;
-    left: 55%;
-    opacity: 0;
-}
-
-.icon2 {
-    top: 0;
-    left: 55%;
-}
-
-.icon-pause {
-    top: 0;
-    left: 58%;
-}
